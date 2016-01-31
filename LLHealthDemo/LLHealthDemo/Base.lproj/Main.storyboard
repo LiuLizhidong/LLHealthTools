@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日步行公里数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwB-Ov-pdI">
+                                <rect key="frame" x="435" y="57" width="145" height="21"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="C8b-zI-XjK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="跑步数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNw-Gl-RDo">
+                                <rect key="frame" x="435" y="86" width="145" height="21"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="s3l-XK-KLO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="跑步公里数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8Y-BP-KLu">
+                                <rect key="frame" x="435" y="115" width="145" height="21"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="FAs-sh-nd3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="今日步行数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f81-kr-juk">
+                                <rect key="frame" x="435" y="144" width="145" height="21"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="SAx-x7-aiU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skd-qG-hd7">
+                                <rect key="frame" x="20" y="24" width="162" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="162" id="ESB-iD-XGL"/>
+                                </constraints>
+                                <state key="normal" title="查询今日步行数："/>
+                                <connections>
+                                    <action selector="getTodayStepsCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9UX-Cm-kPf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jI7-Go-evO">
+                                <rect key="frame" x="20" y="53" width="162" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="162" id="laP-zT-kb6"/>
+                                </constraints>
+                                <state key="normal" title="查询今日步行公里数："/>
+                                <connections>
+                                    <action selector="getTodayStepsKilomiter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lq3-m8-ybl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CS-e7-nA4">
+                                <rect key="frame" x="20" y="82" width="162" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="162" id="0z8-KN-oPm"/>
+                                </constraints>
+                                <state key="normal" title="查询今日跑步数："/>
+                                <connections>
+                                    <action selector="getTodayRunningCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gwz-JG-dbV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmE-K7-KJY">
+                                <rect key="frame" x="20" y="111" width="162" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="162" id="pW8-tK-mfw"/>
+                                </constraints>
+                                <state key="normal" title="查询今日跑步公里数："/>
+                                <connections>
+                                    <action selector="getTodayRunningKilomiter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F8F-Fl-0Zx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZI-h6-O8a">
+                                <rect key="frame" x="20" y="140" width="162" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="162" id="XJI-1c-0hH"/>
+                                </constraints>
+                                <state key="normal" title="查询今日步行数："/>
+                                <connections>
+                                    <action selector="getTodaySteps:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ifo-bG-nSZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日步数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyM-6u-XJM">
+                                <rect key="frame" x="435" y="28" width="145" height="21"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="run-wi-Z2b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="i8Y-BP-KLu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0iP-oY-qhz"/>
+                            <constraint firstItem="tNw-Gl-RDo" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1d4-iU-6qL"/>
+                            <constraint firstItem="dmE-K7-KJY" firstAttribute="top" secondItem="jI7-Go-evO" secondAttribute="bottom" constant="28" id="1ib-WZ-Z8t"/>
+                            <constraint firstItem="TyM-6u-XJM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="7Tq-Qn-9mP"/>
+                            <constraint firstItem="qwB-Ov-pdI" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Afx-0f-D3I"/>
+                            <constraint firstItem="skd-qG-hd7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ctc-N9-a7i"/>
+                            <constraint firstItem="vZI-h6-O8a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Kjc-pA-dbt"/>
+                            <constraint firstItem="jI7-Go-evO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="33" id="PJF-IE-1sz"/>
+                            <constraint firstItem="2CS-e7-nA4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="TkY-jX-h80"/>
+                            <constraint firstItem="vZI-h6-O8a" firstAttribute="top" secondItem="2CS-e7-nA4" secondAttribute="bottom" constant="28" id="Z0R-aV-qqk"/>
+                            <constraint firstItem="f81-kr-juk" firstAttribute="top" secondItem="i8Y-BP-KLu" secondAttribute="bottom" constant="8" id="aEc-Tc-ffa"/>
+                            <constraint firstItem="dmE-K7-KJY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="aPl-gW-Fo1"/>
+                            <constraint firstItem="f81-kr-juk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="dvf-ze-lnE"/>
+                            <constraint firstItem="qwB-Ov-pdI" firstAttribute="top" secondItem="TyM-6u-XJM" secondAttribute="bottom" constant="8" id="fHb-vr-Dyb"/>
+                            <constraint firstItem="2CS-e7-nA4" firstAttribute="top" secondItem="skd-qG-hd7" secondAttribute="bottom" constant="28" id="hNP-71-qze"/>
+                            <constraint firstItem="i8Y-BP-KLu" firstAttribute="top" secondItem="tNw-Gl-RDo" secondAttribute="bottom" constant="8" id="jTI-rr-fFY"/>
+                            <constraint firstItem="skd-qG-hd7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="4" id="kpL-fN-beY"/>
+                            <constraint firstItem="TyM-6u-XJM" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vXo-mw-6ci"/>
+                            <constraint firstItem="jI7-Go-evO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wSH-cc-YCn"/>
+                            <constraint firstItem="tNw-Gl-RDo" firstAttribute="top" secondItem="qwB-Ov-pdI" secondAttribute="bottom" constant="8" id="xtd-8A-lFV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="todayRunningCount" destination="tNw-Gl-RDo" id="5r4-bk-VeO"/>
+                        <outlet property="todayRunningKilomiter" destination="i8Y-BP-KLu" id="kFK-2q-ZSc"/>
+                        <outlet property="todaySteps" destination="f81-kr-juk" id="dpy-6q-kVt"/>
+                        <outlet property="todayStepsCount" destination="TyM-6u-XJM" id="oc1-Ps-mOp"/>
+                        <outlet property="todayStepsKilomiter" destination="qwB-Ov-pdI" id="jh2-R8-R0p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="395" y="256"/>
+        </scene>
+    </scenes>
+</document>
