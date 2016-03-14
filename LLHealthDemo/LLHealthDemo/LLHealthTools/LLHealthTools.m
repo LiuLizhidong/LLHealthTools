@@ -53,12 +53,12 @@
         if (!success) {
             NSLog(@"没有获取授权!!!");
         } else {
-            NSDate *beginDate = [self zeroToday:[self locationTime:[NSDate date]]];
-            NSDate *endDate = [self locationTime:[NSDate date]];
+            NSDate *beginDate = [[DateTool sharedTools] zeroToday:[NSDate date]];
+            NSDate *endDate = [[DateTool sharedTools] locationTime:[NSDate date]];
             
             NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate:beginDate endDate:endDate options:HKQueryOptionNone];
             
-            HKStatisticsQuery *query = [[HKStatisticsQuery alloc] initWithQuantityType:footType quantitySamplePredicate:predicate options:HKStatisticsOptionCumulativeSum completionHandler:^(HKStatisticsQuery * _Nonnull query, HKStatistics * _Nullable result, NSError * _Nullable error) {
+             HKStatisticsQuery * query = [[HKStatisticsQuery alloc] initWithQuantityType:footType quantitySamplePredicate:predicate options:HKStatisticsOptionCumulativeSum completionHandler:^(HKStatisticsQuery * _Nonnull query, HKStatistics * _Nullable result, NSError * _Nullable error) {
                 if (result) {
                     // 行走的步数
                     todayStepsCount = [result.sumQuantity doubleValueForUnit:[HKUnit countUnit]];  // 步数
@@ -69,49 +69,6 @@
     }];
     
     return todayStepsCount;
-}
-
-#pragma mark- 时间转换
-/**
- *  转换本地时间
- *
- *  @param today 格林威治时间
- *
- *  @return 当前系统时区时间
- */
-- (NSDate *)locationTime:(NSDate *)today {
-    NSTimeZone *zone = [NSTimeZone systemTimeZone];
-    NSInteger interval = [zone secondsFromGMTForDate:today];
-    NSDate *locationTime = [today dateByAddingTimeInterval:interval];
-    return locationTime;
-}
-
-/**
- *  转换零点时间
- *
- *  @param today 格林威治时间
- *
- *  @return 当前日期零点时间
- */
-- (NSDate *)zeroToday:(NSDate *)today {
-    NSDate *now = [self locationTime:today];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    
-    NSDateComponents *dateComponents = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitWeekday|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond fromDate:now];
-    
-    NSDateComponents *newComponents = [[NSDateComponents alloc] init];
-    [newComponents setYear:dateComponents.year];
-    [newComponents setMonth:dateComponents.month];
-    [newComponents setWeekday:dateComponents.weekday];
-    [newComponents setDay:dateComponents.day-1];
-    [newComponents setHour:0];
-    [newComponents setMinute:0];
-    [newComponents setSecond:0];
-
-    NSDate *date = [calendar dateFromComponents:newComponents];
-    NSDate *newDate = [self locationTime:date];
-    
-    return newDate;
 }
 
 @end

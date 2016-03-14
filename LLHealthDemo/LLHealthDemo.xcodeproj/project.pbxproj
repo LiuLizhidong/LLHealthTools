@@ -15,6 +15,7 @@
 		19B003981C5D313200281106 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B003961C5D313200281106 /* LaunchScreen.storyboard */; };
 		19B003A21C5D346400281106 /* LLHealthTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B003A11C5D346400281106 /* LLHealthTools.m */; };
 		19B003A41C5D3F6D00281106 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B003A31C5D3F6D00281106 /* HealthKit.framework */; };
+		19FA58051C973402001B9B37 /* DateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FA58041C973402001B9B37 /* DateTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		19B003A01C5D346400281106 /* LLHealthTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLHealthTools.h; sourceTree = "<group>"; };
 		19B003A11C5D346400281106 /* LLHealthTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLHealthTools.m; sourceTree = "<group>"; };
 		19B003A31C5D3F6D00281106 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		19FA58031C973402001B9B37 /* DateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTool.h; sourceTree = "<group>"; };
+		19FA58041C973402001B9B37 /* DateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 			children = (
 				19B003A01C5D346400281106 /* LLHealthTools.h */,
 				19B003A11C5D346400281106 /* LLHealthTools.m */,
+				19FA58031C973402001B9B37 /* DateTool.h */,
+				19FA58041C973402001B9B37 /* DateTool.m */,
 			);
 			path = LLHealthTools;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19B003901C5D313200281106 /* ViewController.m in Sources */,
+				19FA58051C973402001B9B37 /* DateTool.m in Sources */,
 				19B003A21C5D346400281106 /* LLHealthTools.m in Sources */,
 				19B0038D1C5D313200281106 /* AppDelegate.m in Sources */,
 				19B0038A1C5D313200281106 /* main.m in Sources */,
@@ -284,7 +290,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LLHealthDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liulizhidong.LLHealthDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liulizhidong.LLHealthDemo1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -298,7 +304,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LLHealthDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liulizhidong.LLHealthDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liulizhidong.LLHealthDemo1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

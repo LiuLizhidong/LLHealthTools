@@ -12,6 +12,7 @@ typedef enum {
 
 #import <Foundation/Foundation.h>
 #import <HealthKit/HealthKit.h>
+#import "DateTool.h"
 
 @interface LLHealthTools : NSObject
 
