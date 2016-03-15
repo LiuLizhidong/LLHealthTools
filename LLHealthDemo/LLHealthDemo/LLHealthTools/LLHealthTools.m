@@ -36,7 +36,8 @@
     
     __block double todayStepsCount;
     
-    HKQuantityType *type;
+    __block HKQuantityType *type;
+    
     switch (healthType) {
         case 0:
             type = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
@@ -58,7 +59,7 @@
             
             NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate:beginDate endDate:endDate options:HKQueryOptionNone];
             
-             HKStatisticsQuery * query = [[HKStatisticsQuery alloc] initWithQuantityType:footType quantitySamplePredicate:predicate options:HKStatisticsOptionCumulativeSum completionHandler:^(HKStatisticsQuery * _Nonnull query, HKStatistics * _Nullable result, NSError * _Nullable error) {
+             HKStatisticsQuery * query = [[HKStatisticsQuery alloc] initWithQuantityType:type quantitySamplePredicate:predicate options:HKStatisticsOptionCumulativeSum completionHandler:^(HKStatisticsQuery * _Nonnull query, HKStatistics * _Nullable result, NSError * _Nullable error) {
                 if (result) {
                     // 行走的步数
                     todayStepsCount = [result.sumQuantity doubleValueForUnit:[HKUnit countUnit]];  // 步数
