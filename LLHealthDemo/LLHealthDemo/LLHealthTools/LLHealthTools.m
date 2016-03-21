@@ -54,8 +54,8 @@
         if (!success) {
             NSLog(@"没有获取授权!!!");
         } else {
-            NSDate *beginDate = [[DateTool sharedTools] zeroToday:[NSDate date]];
-            NSDate *endDate = [[DateTool sharedTools] locationTime:[NSDate date]];
+            NSDate *beginDate = [DateTool zeroToday:[NSDate date]];
+            NSDate *endDate = [DateTool locationTime:[NSDate date]];
             
             NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate:beginDate endDate:endDate options:HKQueryOptionNone];
             
