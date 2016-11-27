@@ -28,14 +28,15 @@
 
 // 获取今日步数
 - (IBAction)getTodayStepsCount:(id)sender {
-    double todayStepsCount = [[LLHealthTools sharedTools] getTodayStepsCountWithType:footType];
+    double todayStepsCount = [[LLHealthTools sharedTools] getTodayHealthDataWithType:footType];
     NSString *todayStepsCountStr = [NSString stringWithFormat:@"%f", todayStepsCount];
     _todayStepsCount.text = todayStepsCountStr;
 }
 
 // 获取今日步行公里数
 - (IBAction)getTodayStepsKilomiter:(id)sender {
-    double todayStepsKilomiter = [[LLHealthTools sharedTools] getTodayStepsCountWithType:walkType];
+    double todayStepsMiter = [[LLHealthTools sharedTools] getTodayHealthDataWithType:walkType];
+    double todayStepsKilomiter = todayStepsMiter / 1000.0f;
     NSString *todayStepsKilomiterStr = [NSString stringWithFormat:@"%f", todayStepsKilomiter];
     _todayStepsKilomiter.text = todayStepsKilomiterStr;
 }
