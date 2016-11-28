@@ -9,7 +9,10 @@
 typedef enum {
     footType,     // 步行
     walkType,     // 跑步
-}LLHealthType;
+    cyclingType,  // 骑行
+    basalEnergyType,   // 静息能量
+    activeEnergyType,  // 活动能量
+} LLHealthType;
 
 #import <Foundation/Foundation.h>
 #import <HealthKit/HealthKit.h>
@@ -18,6 +21,6 @@ typedef enum {
 @interface LLHealthTools : NSObject
 
 + (instancetype)sharedTools;
-- (double)getTodayStepsCountWithType:(LLHealthType)healthType;
+- (double)getTodayHealthDataWithType:(LLHealthType)healthType;
 
 @end

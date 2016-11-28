@@ -32,9 +32,9 @@
  *
  *  @return 今日健康数据
  */
-- (double)getTodayStepsCountWithType:(LLHealthType)healthType {
+- (double)getTodayHealthDataWithType:(LLHealthType)healthType {
     
-    __block double todayStepsCount;
+    __block double healthData;
     
     __block HKQuantityType *type;
     
@@ -44,6 +44,16 @@
             break;
         case 1:
             type = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierDistanceWalkingRunning];
+            break;
+        case 2:
+            type = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierDistanceCycling];
+            break;
+        case 3:
+            type = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBasalEnergyBurned];
+            break;
+        case 4:
+            type = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierActiveEnergyBurned];
+            break;
         default:
             break;
     }
@@ -59,17 +69,33 @@
             
             NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate:beginDate endDate:endDate options:HKQueryOptionNone];
             
-             HKStatisticsQuery * query = [[HKStatisticsQuery alloc] initWithQuantityType:type quantitySamplePredicate:predicate options:HKStatisticsOptionCumulativeSum completionHandler:^(HKStatisticsQuery * _Nonnull query, HKStatistics * _Nullable result, NSError * _Nullable error) {
+             HKStatisticsQuery * query = [[HKStatisticsQuery alloc] initWithQuantityType:type
+                                                                 quantitySamplePredicate:predicate
+                                                                                 options:HKStatisticsOptionCumulativeSum
+                                                                       completionHandler:^(HKStatisticsQuery * _Nonnull query,
+                                                                                           HKStatistics * _Nullable result,
+                                                                                           NSError * _Nullable error) {
                 if (result) {
+
+                    // 单位转换
+                    HKUnit *unit = [HKUnit new];
+                    if (healthType == footType) {
+                        unit = [HKUnit countUnit];  // 步数
+                    } else if (healthType == cyclingType || healthType == walkType) {
+                        unit = [HKUnit meterUnit];  // 米
+                    } else {
+                        unit = [HKUnit jouleUnit];  // 焦耳
+                    }
+
                     // 行走的步数
-                    todayStepsCount = [result.sumQuantity doubleValueForUnit:[HKUnit countUnit]];  // 步数
+                    healthData = [result.sumQuantity doubleValueForUnit:unit];  // 步数
                 }
             }];
             [_healthStore executeQuery:query];
         }
     }];
     
-    return todayStepsCount;
+    return healthData;
 }
 
 @end
