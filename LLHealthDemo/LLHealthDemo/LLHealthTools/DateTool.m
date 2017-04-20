@@ -29,7 +29,7 @@
  *  @return 当前系统时区时间
  */
 + (NSDate *)locationTime:(NSDate *)today {
-    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    NSTimeZone *zone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];
     NSInteger interval = [zone secondsFromGMTForDate:today];
     NSDate *locationTime = [today dateByAddingTimeInterval:interval];
     return locationTime;
