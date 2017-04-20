@@ -19,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1929D8F01EA8732B000AA6B7 /* LLHealthDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LLHealthDemo.entitlements; sourceTree = "<group>"; };
 		19B003851C5D313200281106 /* LLHealthDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLHealthDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B003891C5D313200281106 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19B0038B1C5D313200281106 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 		19B003871C5D313200281106 /* LLHealthDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1929D8F01EA8732B000AA6B7 /* LLHealthDemo.entitlements */,
 				19B0039F1C5D33BA00281106 /* LLHealthTools */,
 				19B0038B1C5D313200281106 /* AppDelegate.h */,
 				19B0038C1C5D313200281106 /* AppDelegate.m */,
@@ -133,6 +135,12 @@
 					19B003841C5D313200281106 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = KR7TAPX9RL;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -289,13 +297,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = NO;
+				CODE_SIGN_ENTITLEMENTS = LLHealthDemo/LLHealthDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KR7TAPX9RL;
 				INFOPLIST_FILE = LLHealthDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liulizhidong.LLHealthDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liulizhidong.LLHealthDemo222;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -304,13 +316,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = NO;
+				CODE_SIGN_ENTITLEMENTS = LLHealthDemo/LLHealthDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = KR7TAPX9RL;
 				INFOPLIST_FILE = LLHealthDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liulizhidong.LLHealthDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liulizhidong.LLHealthDemo222;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
